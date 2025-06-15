@@ -1,6 +1,6 @@
-
+import java.util.*;
 class PalindromeInt {
-    public boolean isPalindrome(int x) {
+    public static  boolean isPalindrome(int x) {
       //default value is false
         boolean result = false;
       //reverse is used for checking with original
@@ -23,9 +23,10 @@ class PalindromeInt {
   //main method
   public static void main(String[] args){
     Scanner sc=new Scanner(System.in);
-    int x=sc.nextInt();
+    int n=sc.nextInt();
     boolean res=isPalindrome(n);
     System.out.println(res);
     
+}
 }
   
