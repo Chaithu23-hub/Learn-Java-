@@ -1,27 +1,26 @@
 // my way
+import java.util.ArrayList;
+
 class Solution {
     public ArrayList<Integer> leaders(int[] nums) {
         ArrayList<Integer> arr = new ArrayList<>();
-        boolean leader=true;
-        for(int i=0;i<nums.length-1;i++){
-            int count=0;
-            for(int j=i+1;j<nums.length;j++){
-                if(nums[i]>nums[j]){
-                   leader=true; 
-                }else{
-                    leader=false;
-                    count++;
+        for (int i = 0; i < nums.length - 1; i++) {
+            boolean isLeader = true;
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] < nums[j]) {
+                    isLeader = false;
                     break;
                 }
             }
-            if(count==0 && leader==true){
+            if (isLeader) {
                 arr.add(nums[i]);
             }
         }
-        arr.add(nums[nums.length-1]);
+        arr.add(nums[nums.length - 1]); // last element is always a leader
         return arr;
     }
 }
+
 // optimal way
 class Solution {
     public ArrayList<Integer> leaders(int[] nums) {
